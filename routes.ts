@@ -11,6 +11,7 @@ export const PROTECTED_ROUTES = [
   "/problems/*",
   "/explore/*",
   "/events/*",
-  '/profile'
+  '/profile',
+  '/form'
   // your other protected routes
 ]

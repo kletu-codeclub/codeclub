@@ -68,7 +68,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
    return session;
   },
 
-  redirect() {
+  redirect({ url, baseUrl }) {
+   // Check if there's a callbackUrl in the URL parameters
+   const callbackUrl = new URL(url).searchParams.get("callbackUrl");
+   if (callbackUrl) {
+    return callbackUrl;
+   }
    return "/explore";
   },
  },
