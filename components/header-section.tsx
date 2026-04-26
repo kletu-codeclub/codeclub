@@ -8,7 +8,6 @@ import { ArrowRightIcon } from 'lucide-react'
 import { auth } from '@/auth'
 import Link from 'next/link'
 import { Bricolage_Grotesque } from 'next/font/google'
-import ResultsBanner from '@/components/results-banner'
 
 const fontHeading = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -41,9 +40,6 @@ export default async function HeroSection() {
     const isLoggedIn = !!session?.user;
     return (
         <>
-            <ResultsBanner />
-            {/* Spacer for fixed banner */}
-            <div className="h-[52px] md:h-[44px]" />
             <HeroHeader />
 
             <main className="overflow-hidden [--color-primary-foreground:var(--color-white)] [--color-primary:var(--color-green-600)]">
@@ -93,23 +89,6 @@ export default async function HeroSection() {
                                         </div>
                                     </div>
                                 </Link>
-                                {/* for contest by prajwal */}
-
-<Link href={isLoggedIn?'/form':'/auth'}>
-    <div className="z-10 flex items-center justify-center pt-4">
-        <div
-            className={cn(
-            "group rounded-full border-2 border-green-500/60 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 shadow-lg shadow-green-500/20 dark:border-green-500/50 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:shadow-green-500/30",
-            )}
-        >
-            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-            <span>🚀 Register for Contest</span>
-            <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-            </AnimatedShinyText>
-        </div>
-    </div>
-</Link>
-
                                 <div
                                     aria-hidden
                                     className="bg-radial from-primary/50 dark:from-primary/25 relative mx-auto mt-32 max-w-2xl to-transparent to-55% text-left">

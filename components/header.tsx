@@ -23,8 +23,6 @@ const handleSmoothScroll = (href: string) => {
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
-    const [isBannerHidden, setIsBannerHidden] = React.useState(false)
-    const [isBannerClosed, setIsBannerClosed] = React.useState(false)
     const {data:session} = useSession()
     const isLoggedIn = (session?.user)!!
     
@@ -33,28 +31,19 @@ export const HeroHeader = () => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY
             setIsScrolled(currentScrollY > 50)
-            // Track if banner should be hidden (same logic as banner component)
-            setIsBannerHidden(currentScrollY > 50)
-        }
-        
-        const handleBannerClosed = () => {
-            setIsBannerClosed(true)
         }
         
         window.addEventListener('scroll', handleScroll)
-        window.addEventListener('bannerClosed', handleBannerClosed)
         
         return () => {
             window.removeEventListener('scroll', handleScroll)
-            window.removeEventListener('bannerClosed', handleBannerClosed)
         }
     }, [])
     return (
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2 transition-all duration-300"
-                style={{ top: (isBannerHidden || isBannerClosed) ? '0' : '52px' }}>
+                className="fixed top-0 z-20 w-full px-2 transition-all duration-300">
                 <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">

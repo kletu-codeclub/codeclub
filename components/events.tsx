@@ -203,23 +203,6 @@ export const CloseIcon = () => {
 const cards = [
   {
     description: "Competitive Coding Contest",
-    title: "Code Unveiled",
-    src: "/techxhunt.jpg", // Replace with your actual image path
-    ctaText: "Register Now",
-    ctaLink: "/form",
-    content: () => (
-      <p>
-        Code Unveiled, will be held on April 11 and 12, 2026, featured algorithmic challenges with varying complexity.
-        With 30+ participants and a ₹1500 prize pool, it encouraged problem-solving under pressure.
-        <br /><br />
-        📍 Venue: Will be announced soon <br />
-        🏆 Prizes: ₹500 – ₹100 <br />
-        🕒 Rounds : 2 (First on 11th and second on 12th)
-      </p>
-    ),
-  },
-  {
-    description: "Competitive Coding Contest",
     title: "CodeCrafters 04",
     src: "/techxhunt.jpg", // Replace with your actual image path
     ctaText: "Register Now",
