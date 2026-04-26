@@ -32,7 +32,7 @@ export default function EditorialsPage() {
               )}
             </div>
             {e.available && (
-              
+              <a
                 href={e.pdfUrl}
                 download
                 className="border rounded-lg px-4 py-2 text-sm hover:bg-muted transition-colors"
