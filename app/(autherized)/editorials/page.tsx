@@ -1,3 +1,4 @@
+
 import { db } from "@/lib/db"
 
 export default async function EditorialsPage() {
@@ -22,7 +23,7 @@ export default async function EditorialsPage() {
 
       <div className="flex flex-col gap-4">
         {withEditorial.map((contest) => (
-          
+          <a
             key={contest.id}
             href={contest.editorial?.pdfUrl ?? "#"}
             download
