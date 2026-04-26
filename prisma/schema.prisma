@@ -78,3 +78,24 @@ model Like {
  
   @@unique([blogId, userId])
 }
+
+model Contest {
+  id          String     @id @default(cuid())
+  name        String
+  description String?
+  heldAt      DateTime?
+  editorial   Editorial?
+
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Editorial {
+  id        String   @id @default(cuid())
+  contestId String   @unique
+  content   String
+  contest   Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
