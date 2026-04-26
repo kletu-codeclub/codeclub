@@ -93,7 +93,8 @@ model Contest {
 model Editorial {
   id        String   @id @default(cuid())
   contestId String   @unique
-  content   String
+  content   String   @default("")
+  pdfUrl    String?
   contest   Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
