@@ -4,6 +4,11 @@ const editorials = [
     pdfUrl: "/AlgoBlitz3.0_Editorial.pdf",
     available: true,
   },
+  {
+    contest: "Laughtale",
+    pdfUrl: "/LAUGHTALE_EDITORIAL.pdf",
+    available: true,
+  },
 ];
 
 export default function EditorialsPage() {
