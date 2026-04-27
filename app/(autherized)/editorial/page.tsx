@@ -1,7 +1,7 @@
 const editorials = [
   {
     contest: "AlgoBlitz 3.0",
-    pdfUrl: "/AlgoBlitz3.0_Editorial.pdf",
+    pdfUrl: "/AlgoBlitz3.0_Editorial_1.pdf",
     available: true,
   },
   {
