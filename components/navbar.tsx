@@ -23,6 +23,7 @@ const navigationLinks = [
   { href: "/problems", label: "Problems" },
   { href: "/blogs", label: "Blogs" },
   { href: "/events", label: "Events" },
+{ href: "/editorial", label: "Editorials" },
 ]
 
 export default function Component() {
